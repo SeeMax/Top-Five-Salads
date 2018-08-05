@@ -1,0 +1,148 @@
+@import "colors";
+
+.single-salad {
+	display: flex;
+	flex-wrap:wrap;
+	align-items: stretch;
+	width:100%;
+	height: auto;
+	background: white;
+	margin-bottom:20px;
+}
+
+.salad-image {
+	position: relative;
+}
+
+.salad-order {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top:0;
+	left:0;
+	color:white;
+	width:75px;
+	height:75px;
+	background:$green;
+}
+
+.salad-order-number {
+	font:800 16px/1 'kessel', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border:4px solid white;
+	width:32px;
+	height:32px;
+	border-radius:50%;
+}
+
+.salad-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding:35px 35px 25px 35px;
+
+	a {
+		text-transform: none;
+		color:$black;
+		text-decoration: underline;
+	}
+
+	hr {
+		margin:35px 0 10px 0;
+	}
+}
+
+.salad-credit {
+	width:100%;
+	margin-bottom:25px;
+}
+
+.salad-description {
+
+}
+
+.salad-ingredients {
+
+	ul {
+		columns: 2;
+		margin-top: 12px;
+	}
+
+	li {
+		display: inline-flex;
+		width:100%;
+
+		&:before {
+			content:'•';
+			margin-right:4px;
+		}
+	}
+}
+
+.salad-ranks {
+
+}
+
+.single-salad-rank {
+	margin-bottom:20px;
+
+	h5 {
+		margin-bottom:6px;
+	}
+
+}
+
+.rank-bar {
+	height:14px;
+	width:100%;
+	border:3px solid $black;
+	margin-bottom: 6px;
+
+	svg {
+		display: block;
+		width:100%;
+		height:100%;
+	}
+}
+
+.rank-bar-labels {
+	display:flex;
+	width:100%;
+	justify-content: space-between;
+	align-items: flex-start;
+	transform:translateY(-7px);
+	opacity:0;
+}
+
+.texture-bar {
+	svg {
+		fill:$blueGreen;
+	}
+}
+
+.dressing-bar {
+	svg {
+		fill:$lightGreen;
+	}
+}
+
+.greens-bar {
+	svg {
+		fill:$red;
+	}
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+}

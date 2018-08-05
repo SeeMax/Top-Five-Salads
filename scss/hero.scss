@@ -1,0 +1,104 @@
+@import "colors";
+
+.hero-section {
+	margin-top:0px;
+
+	.content {
+		padding-top:120px;
+		padding-bottom: 0;
+	}
+
+	h1 {
+		text-align: center;
+		border:8px solid $black;
+		padding:14px 20px;
+		background:$lightGreen;
+		line-height: 1.25;
+	}
+}
+
+.salad-parts {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	max-width: 1080px;
+	margin:0 auto;
+
+	svg {
+		overflow: visible;
+	}
+}
+
+
+.leaf-far-back-left, .leaf-far-back-right {
+	fill:#CAE5C9;
+}
+
+.leaf-back-left-mid, .leaf-back-left-end, .leaf-back-right-mid, .leaf-back-right-end {
+	fill:#009345;
+}
+
+.leaf-right, .leaf-left {
+
+	line {
+		fill:none;
+		stroke:#006564;
+		stroke-width:6.5535;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke-miterlimit:10;
+	}
+
+	path {
+		fill:#4ABA80;
+	}
+}
+
+
+.tomato-left, .tomato-right {
+
+	.seeds {
+		fill:#EC1C24;
+		stroke:#EC1C24;
+		stroke-width:1.026;
+		stroke-miterlimit:10;
+	}
+
+	.meat {
+		fill:#ED563B;
+	}
+
+	.rind {
+		fill:#EC1C24;
+	}
+}
+
+.egg-left, .egg-right {
+
+	ellipse {
+		fill:#FFCF40;
+	}
+
+	path {
+		fill:#FFFFFF;
+	}
+}
+
+.cucumber-left, .cucumber-middle, .cucumber-right {
+
+	.rind {
+		fill:#4ABA80;
+	}
+
+	.meat{
+		fill:#BDDDA6;
+	}
+
+	path {
+		fill:#4ABA80;
+		stroke:#4ABA80;
+		stroke-width:1.0354;
+		stroke-miterlimit:10;
+	}
+}

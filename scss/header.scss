@@ -1,0 +1,56 @@
+@import "colors";
+
+.header {
+	background: none;
+
+	.content {
+		padding-top:100px;
+		padding-bottom:40px;
+		justify-content: space-between;
+
+	}
+}
+
+.submit-nav {
+	font-size:22px;
+	line-height: 1.4;
+	font-weight:bold;
+	border-bottom: 3px solid black;
+}
+
+.menu-toggle {
+	cursor: pointer;
+	display: block;
+	z-index:1000001;
+	display: flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:center;
+	width:25px;
+	height:27px;
+
+	span {
+		display: block;
+		height:3px;
+		width:100%;
+		background-color: black;
+	}
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.header {
+
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.header {
+
+	}
+}

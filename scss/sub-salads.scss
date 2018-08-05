@@ -1,0 +1,36 @@
+@import "colors";
+
+.sub-salad-section {
+
+  h2 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  h4 {
+    margin-bottom:3px;
+  }
+
+  .salad-description {
+    margin-top:24px;
+  }
+}
+
+.no-slouch-section {
+  background:$blueGreen;
+}
+
+.gotta-try-section {
+  background:$green;
+}
+
+.by-and-submitted-area {
+  width:100%;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.try-submitter {
+  color:$turquoise;
+}

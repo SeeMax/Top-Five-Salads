@@ -1,0 +1,31 @@
+@import "colors";
+
+.footer {
+	display: none;
+	
+	.content {
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	a {
+
+	}
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.footer {
+
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.footer {
+
+	}
+}

@@ -1,0 +1,71 @@
+@import "colors";
+
+.main-menu {
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  transform:translateX(-100%);
+
+  .content {
+    height:100%;
+    margin-top:143px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction:column;
+  }
+
+  .menu-toggle {
+    margin-bottom:60px;
+  }
+
+  .background-block {
+    position: absolute;
+    top:0;
+    left:0;
+    width:45%;
+    height:100%;
+    background-color:$lightGray;
+  }
+
+  h3 {
+    cursor:pointer;
+    width:auto;
+    display: inline-block;
+    margin-bottom:44px;
+    border-bottom:8px solid $lightGray;
+    padding-bottom: 2px;
+    transition:border-color .3s;
+  }
+
+  .about-toggle {
+    &:hover {
+      border-color:$yellow;
+    }
+  }
+
+  .submit-toggle {
+    &:hover {
+      border-color:$red;
+    }
+  }
+
+  .top5-toggle {
+    &:hover {
+      border-color:$lightGreen;
+    }
+  }
+
+  .slouch-toggle {
+    &:hover {
+      border-color:$blueGreen;
+    }
+  }
+
+  .try-toggle {
+    &:hover {
+      border-color:$green;
+    }
+  }
+}
