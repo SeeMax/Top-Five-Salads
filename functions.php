@@ -231,8 +231,8 @@ function theme_header_scripts() {
   //	wp_register_script('lightbox', get_template_directory_uri() . '/js/lib/lightbox.js', array(), '0.131', true);
   //	wp_enqueue_script('lightbox');
 
-  //  wp_register_script('SmoothScroll', get_template_directory_uri() . '/js/lib/smooth-scroll.js', array(), '0.131', true);
-  //  wp_enqueue_script('SmoothScroll');
+    wp_register_script('SmoothScroll', get_template_directory_uri() . '/js/lib/smooth-scroll.js', array(), '0.131', true);
+    wp_enqueue_script('SmoothScroll');
 
     // ENQUEUE COMPILED SCRIPTS
     wp_register_script('themescripts', get_template_directory_uri() . '/scripts.js', array('jquery'), '1.0.0');
@@ -409,6 +409,19 @@ add_action('init', 'create_post_type');
              'labels' => array(
                  'name' => __('Salads'),
                  'singular_name' => __('Salad')
+             ),
+             'public' => true,
+             'has_archive' => true,
+             'supports' => array('title','editor'),
+         )
+     );
+
+     register_post_type('gottatrys',
+     // CPT Options
+         array(
+             'labels' => array(
+                 'name' => __('Gotta Trys'),
+                 'singular_name' => __('Gotta Try')
              ),
              'public' => true,
              'has_archive' => true,
@@ -642,17 +655,17 @@ function remove_menus(){
   if ( is_user_logged_in() ) {
     $current_user = wp_get_current_user();
     // ADD USER ID INSIDE array() SO THOSE USERS DON'T HAVE THE BELOW HIDDEN
-    if (!in_array($current_user->ID, array(1))) {
       remove_menu_page( 'edit.php' );                  //Posts
-      remove_menu_page( 'index.php' );                  //Dashboard
+      // remove_menu_page( 'index.php' );                  //Dashboard
       //   remove_menu_page( 'jetpack' );                    //Jetpack*
       remove_menu_page( 'edit-comments.php' );          //Comments
+    if (!in_array($current_user->ID, array(1))) {
+      remove_menu_page('edit.php?post_type=acf-field-group');      //ACF
       remove_menu_page( 'themes.php' );                 //Appearance
       remove_menu_page( 'plugins.php' );                //Plugins
       remove_menu_page( 'users.php' );                  //Users
       remove_menu_page( 'tools.php' );                  //Tools
-      // remove_menu_page( 'options-general.php' );        //Settings
-      remove_menu_page('edit.php?post_type=acf-field-group');      //ACF
+      remove_menu_page( 'options-general.php' );        //Settings
     }
   }
 }

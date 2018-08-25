@@ -1,0 +1,47 @@
+@import "colors";
+
+.sub-menu {
+  font-size:24px;
+  line-height: 1.9;
+  position: fixed;
+  z-index: 81;
+  top:0;
+  left:-55%;
+  width:55%;
+  height:100%;
+  min-height:100%;
+  padding-top:130px;
+  background-color: $yellow;
+
+  .content {
+    height:100%;
+    min-height:calc(100% - 143px);
+    overflow:scroll;
+    padding-left:80px;
+    padding-right:80px;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  .submenu-toggle {
+  	position: absolute;
+  	top:100px;
+  	right:80px;
+  	cursor: pointer;
+  	display: block;
+  	z-index:1000001;
+  	display: flex;
+  	flex-wrap:wrap;
+  	align-items:center;
+  	justify-content:center;
+  	width:25px;
+  	height:27px;
+
+  	span {
+  		display: block;
+  		height:3px;
+  		width:100%;
+  		background-color: black;
+  	}
+  }
+}

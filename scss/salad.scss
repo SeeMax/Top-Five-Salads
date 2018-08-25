@@ -11,6 +11,7 @@
 }
 
 .salad-image {
+	height:auto;
 	position: relative;
 }
 
@@ -145,4 +146,15 @@
 // 767px And Below
 @media screen and (max-width: 767px){
 
+	.single-salad {
+		margin-bottom:0px;
+	}
+
+	.salad-image {
+		height:330px;
+	}
+
+	.salad-info {
+		padding-top:25px;
+	}
 }

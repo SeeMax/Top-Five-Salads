@@ -3,12 +3,85 @@
 .submit-menu {
   position: fixed;
   top:0;
-  left:0;
-  width:100%;
+  left:-55%;
+  width:55%;
   height:100%;
+  min-height:100%;
   background-color: $red;
+  overflow:scroll;
 
   .content {
-    margin-left: 45%;
+    height:auto;
+    min-height:calc(100% - 143px);
+    overflow:scroll;
+    padding-left:80px;
+    padding-right:80px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding-bottom:30px;
+  }
+
+  .wpcf7 {
+    width:100%;
+  }
+
+  span {
+    display: block;
+  }
+
+  input, textarea {
+    width:100%;
+    font:400 16px/1 'persona', sans-serif;
+    color:$black;
+    padding:15px;
+    border:0;
+    margin-bottom:24px;
+
+    &::placeholder {
+      color:$black;
+    }
+  }
+
+  textarea {
+    display: block;
+    height:115px;
+  }
+
+  input[type="submit"] {
+    cursor:pointer;
+    background:none;
+    outline:none;
+    border-width:0px;
+    border-bottom:3px solid $black;
+    text-align: left;
+    display: inline-block;
+    width:auto;
+    padding:0px;
+    padding-bottom:6px;
+    font-weight:800;
+    font-size:20px;
+    transition:all 0.3s ease-in;
+
+    &:hover {
+      padding-bottom:4px;
+    }
+  }
+
+  .wpcf7-response-output, .wpcf7-not-valid-tip {
+    font-size:18px;
+    line-height: 1.2;
+    padding:16px;
+    text-align: center;
+    border:2px solid red;
+  }
+
+  .wpcf7-not-valid-tip {
+    text-align: left;
+    color:$black;
+    padding:12px;
+  }
+
+  .wpcf7-mail-sent-ok {
+    border:2px solid $green;
   }
 }

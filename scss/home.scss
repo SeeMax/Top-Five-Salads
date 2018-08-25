@@ -10,6 +10,7 @@
 	background: $lightGreen;
 
 	.content {
+		padding-top:0px;
 		padding-bottom:70px;
 	}
 }
@@ -23,6 +24,7 @@
 	}
 
 	span {
+		cursor:pointer;
 		position: relative;
 		top:1px;
 		font-weight:bold;
@@ -43,7 +45,16 @@
 // 767px And Below
 @media screen and (max-width: 767px){
 
-	.content {
+	.top-five-section {
 
+		.content {
+			padding-left:0px;
+			padding-right:0px;
+			padding-bottom:0px;
+		}
+	}
+
+	.got-a-salad-prompt {
+		display: none;
 	}
 }

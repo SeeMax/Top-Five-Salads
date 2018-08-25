@@ -1,21 +1,40 @@
 @import "colors";
 
 .header {
-	background: none;
+	position: relative;
+	margin-top:100px;
+	margin-bottom:20px;
+	background: $lightGreen;
+	height:80px;
+	z-index:80;
 
 	.content {
-		padding-top:100px;
-		padding-bottom:40px;
+		height:100%;
+		padding-top:0px;
+		padding-bottom:0px;
 		justify-content: space-between;
-
+		align-items:center;
 	}
 }
 
 .submit-nav {
+	cursor:pointer;
+	position: relative;
 	font-size:22px;
 	line-height: 1.4;
 	font-weight:bold;
 	border-bottom: 3px solid black;
+	transform:translateY(-2px);
+}
+
+.scrolled-title {
+	opacity:0;
+	text-align: center;
+	position:absolute;
+	top:22px;
+	left:0;
+	right:0;
+	margin:0 auto;
 }
 
 .menu-toggle {

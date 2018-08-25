@@ -22,14 +22,15 @@
 <div id="preloader">
 	<img class="fug_Preloader" src="<?php // echo get_template_directory_uri();?>/img/fug_preloader.svg" >
 </div> -->
-	<header class="header" role="banner">
+	<header class="header headerPin" role="banner">
 		<div class="content">
 			<nav class="menu-toggle menuToggle" role="navigation">
 				<span class="hamTop"></span>
 				<span class="hamMid"></span>
 				<span class="hamBot"></span>
 			</nav>
-			<div class="submit-nav submitTrigger">
+			<h3 class="scrolled-title scrolledTitle">Top 5 Salads</h3>
+			<div class="subNavToggle submit-nav submitToggle menuToggle">
 				Submit A Salad
 			</div>
 		</div>

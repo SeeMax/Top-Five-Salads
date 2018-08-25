@@ -52,41 +52,251 @@
 
 //USE THE BELOW AS TEMPLATE FOR FUNCTION FILES
 
-$(".menuToggle").on('click', function() {
+$(window).on('load', function() {
 
-	var tl = new TimelineMax(),
-			$this = $(this),
-			wrapper = $(".wrapper"),
+	(function navMagic() {
+
+		if (screen.width >= 1025){
+
+			var setupTL = new TimelineMax(),
+					titleSwapTL = new TimelineMax(),
+					secondTL = new TimelineMax(),
+					controller = new ScrollMagic.Controller(),
+					// First Section
+					firstTrigger = $(".top5Trigger"),
+					firstMover = $(".singleSalad"),
+					secondTrigger = $(".saladTrigger"),
+					secondMover = $(".rankBar"),
+					scrolledTitle = $(".scrolledTitle"),
+					saladParts = $(".saladParts"),
+					mainTitle = $(".mainTitle"),
+		      // Universal Variables
+		      uniTime1 = 1,
+		      uniTime2 = 0.3,
+		      uniEase1 = Power4.easeOut,
+		      uniEase2 = Power4.easeIn;
+
+	    setupTL.set(mainTitle, {transformPerspective:300})
+						 .set(scrolledTitle, {transformPerspective:300,transformOrigin:"50% 100%", rotationX:90});
+
+			titleSwapTL.to(scrolledTitle, 0.3, {opacity:1,rotationX:0},"swapTitle")
+								 .to(mainTitle, 0.3, {opacity:0, transformOrigin:"50% 0%", rotationX:-90},"swapTitle")
+								 .to(saladParts, 0.3, {opacity:0, y:-80},"swapTitle");
+
+			var titleHeight = $(".mainTitle").height();
+
+			console.log(titleHeight);
+
+			var titleSwapScene = new ScrollMagic.Scene({
+				triggerElement: ".mainTitle",
+				triggerHook: 'onLeave',
+				duration: titleHeight,
+				offset:-80,
+				reverse: true,
+			}).setTween(titleSwapTL);
+
+			var secondScene = new ScrollMagic.Scene({
+				triggerElement: ".saladTrigger",
+				triggerHook: 'onLeave',
+				offset:0,
+				reverse: true,
+			}).on('enter', mainNavLock());
+
+			var pinHeaderScene = new ScrollMagic.Scene({
+				triggerElement: ".headerPin",
+				triggerHook: 'onLeave',
+				offset:0,
+				reverse: true,
+			}).setPin(".headerPin");
+
+
+
+			// ADD THE SCENES ABOVE TO THE SCROLLMAGIC CONTROLLER
+			controller.addScene([titleSwapScene, pinHeaderScene]);
+
+		}// End 1025 Screen Width Scope
+
+
+		function mainNavLock() {
+
+
+		}
+
+		$(".single-salad").each( function(){
+
+			var setupTL = new TimelineMax(),
+					numberPunchTL = new TimelineMax(),
+					controller = new ScrollMagic.Controller(),
+					saladNum = $(this).find(".salad-order-number"),
+					saladOrder = $(this).find(".salad-order");
+
+
+			setupTL.set(saladNum, {opacity:0, scale:10})
+						 .set(saladOrder, {transformPerspective:300, transformOrigin:"50% 0%"});
+
+			numberPunchTL.to(saladNum, 0.2, {scale:1, opacity:1})
+									 .to(saladOrder, 0.1, {rotationX:-30})
+									 .to(saladOrder, 0.1, {rotationX:30})
+									 .to(saladOrder, 0.1, {rotationX:0});
+
+			var numberPunchScene = new ScrollMagic.Scene({
+				triggerElement: this,
+				offset:-80,
+				reverse: false,
+			}).setTween(numberPunchTL);
+
+
+			controller.addScene(numberPunchScene);
+
+		});
+
+
+	}()); //MENU TOGGLES END
+}); //WINDOW LOAD END
+
+(function menuToggles() {
+
+	var wrapper = $(".wrapper"),
 			fullHam = $(".menuToggle"),
 			mainMenu = $('.mainMenu'),
 			links = $(".mainMenu h3"),
 			ham1 = fullHam.find(".hamTop"),
 			ham2 = fullHam.find(".hamMid"),
 			ham3 = fullHam.find(".hamBot"),
-			uniTime2 = 0.15;
+			uniTime = 0.3,
+			uniTime2 = 0.15,
+			subHam = $(".submenuToggle"),
+			subHam1 = subHam.find(".hamTop"),
+			subHam2 = subHam.find(".hamMid"),
+			subHam3 = subHam.find(".hamBot");
 
-	if ($this.hasClass("navOpen")) {
-		$this.removeClass("navOpen");
 
-		tl.set(wrapper, {overflow:'visible', height:"auto"})
-			.to(mainMenu, 0.3, {x:"-100%"}, "menuClose")
+	function mainNavClose() {
+
+		var tl = new TimelineMax();
+
+		// tl.set($(".wrapper"), {height:"auto", overflow:"visible"});
+		tl.to(mainMenu, 0.3, {x:"-100%"}, "menuClose")
 			.staggerTo(links, 0.3, {opacity:0, x:"-20%"}, 0.03, "menuClose")
 			.to(ham1, uniTime2, {rotation:0, y:0}, "menuClose")
 			.to(ham2, uniTime2, {x:0, opacity:1}, "menuClose")
 			.to(ham3, uniTime2, {rotation:0, y:0}, "menuClose");
 
+		links.removeClass("hover-add");
+	}
+
+	function mainNavOpen() {
+
+		var tl = new TimelineMax();
+
+		// tl.set($(".wrapper"), {height:"100%", overflow:"hidden"});
+		tl.set(links, {opacity:0, x:"-20%"}, "menuOpen")
+			.to(mainMenu, 0.3, {x:"0%"}, "menuOpen")
+			.staggerTo(links, 0.1, {opacity:1, x:"0%"}, 0.07, "menuOpen+0.03")
+			.to(ham1, uniTime2, {rotation:227, y:9}, "menuOpen")
+			.to(ham2, uniTime2, {x:5, opacity:0}, "menuOpen")
+			.to(ham3, uniTime2, {rotation:-227, y:-9}, "menuOpen");
+	}
+
+	function allNavsClose() {
+
+		var tl = new TimelineMax();
+
+		$(".aboutMenu").css("z-index", "98");
+		$(".aboutToggle").removeClass("about-hover");
+		$(".submitMenu").css("z-index", "98");
+		$(".submitToggle").removeClass("submit-hover");
+		links.removeClass("hover-add");
+
+		$(".menuToggle").removeClass("navOpen");
+
+		tl.set($(".wrapper"), {height:"auto", overflow:"visible"})
+			.to(".subMenu", 0.2, {left:"-55%"}, "menuClose")
+			.to(subHam1, uniTime2, {rotation:0, y:0}, "menuClose")
+			.to(subHam2, uniTime2, {x:0, opacity:1}, "menuClose")
+			.to(subHam3, uniTime2, {rotation:0, y:0}, "menuClose")
+			.to(mainMenu, 0.2, {x:"-100%"}, "menuClose+=0.15")
+			.staggerTo(links, 0.2, {opacity:0, x:"-20%"}, 0.03, "menuClose+=0.15")
+			.to(ham1, uniTime2, {rotation:0, y:0,opacity:1}, "menuClose+=0.2")
+			.to(ham2, uniTime2, {x:0, opacity:1}, "menuClose+=0.2")
+			.to(ham3, uniTime2, {rotation:0, y:0,opacity:1}, "menuClose+=0.2");
+	}
+
+	$(".menuToggle").on('click', function() {
+
+		var	$this = $(this);
+
+		if ($this.hasClass("navOpen")) {
+			$this.removeClass("navOpen");
+			mainNavClose();
 		} else {
 			$this.addClass("navOpen");
-
-			tl.set(wrapper, {overflow:'hidden', height:"100%"})
-				.set(links, {opacity:0, x:"-20%"}, "menuOpen")
-				.to(mainMenu, 0.3, {x:"0%"}, "menuOpen")
-				.staggerTo(links, 0.1, {opacity:1, x:"0%"}, 0.07, "menuOpen+0.03")
-				.to(ham1, uniTime2, {rotation:227, y:9}, "menuOpen")
-				.to(ham2, uniTime2, {x:5, opacity:0}, "menuOpen")
-				.to(ham3, uniTime2, {rotation:-227, y:-9}, "menuOpen");
+			mainNavOpen();
 		}
-});
+	});
+
+	$(".subNavAnchor a").on('click', function() {
+
+		var tl = new TimelineMax(),
+	      $this = $(this);
+
+		$(".menuToggle").removeClass("navOpen");
+		allNavsClose();
+	});
+
+
+	$(".subNavToggle").on('click', function() {
+
+	  var tl = new TimelineMax(),
+	      $this = $(this);
+
+
+    tl.to(".subMenu", 0.2, {left:"-55%"}, "subClose")
+			.to(subHam1, uniTime2, {rotation:0, y:0}, "subClose")
+			.to(subHam2, uniTime2, {x:0, opacity:1}, "subClose")
+			.to(subHam3, uniTime2, {rotation:0, y:0}, "subClose");
+
+		if ($this.hasClass("submitToggle")) {
+			$(".submitMenu").addClass("openSubNav");
+			$(".subMenu").css("z-index", "81");
+			$(".aboutToggle").removeClass("hover-add");
+			$(".submitToggle").addClass("hover-add");
+
+			tl.to(".submitMenu", 0.3, {left:"45%", onComplete:moveSubmitNavForward});
+		}
+
+		if ($this.hasClass("aboutToggle")) {
+
+			$(".aboutMenu").addClass("openSubNav");
+			$(".subMenu").css("z-index", "81");
+			$(".submitToggle").removeClass("hover-add");
+			$(".aboutToggle").addClass("hover-add");
+
+			tl.to(".aboutMenu", 0.3, {left:"45%", onComplete:moveAboutNavForward});
+		}
+
+    tl.to(subHam1, uniTime2, {rotation:227, y:9}, "subMenuOpen+=0.05")
+      .to(subHam2, uniTime2, {x:5, opacity:0}, "subMenuOpen+=0.05")
+      .to(subHam3, uniTime2, {rotation:-227, y:-9}, "subMenuOpen+=0.05")
+      .to(ham1, uniTime2, {rotation:0, y:0,  opacity:0}, "subMenuOpen-=0.25")
+      .to(ham2, uniTime2, {x:0, opacity:0}, "subMenuOpen-=0.25")
+      .to(ham3, uniTime2, {rotation:0, y:0, opacity:0}, "subMenuOpen-=0.25");
+
+    function moveSubmitNavForward() {
+      $(".submitMenu").css("z-index", "100");
+    }
+
+		function moveAboutNavForward() {
+			$(".aboutMenu").css("z-index", "100");
+		}
+	});
+
+
+	$(".submenuToggle").on('click', function() {
+		allNavsClose();
+	});
+
+}());
 
 (function saladHero() {
 

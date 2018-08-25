@@ -2,6 +2,10 @@
 
 .sub-salad-section {
 
+  .content {
+    align-content: flex-start;
+  }
+
   h2 {
     text-align: center;
     margin-bottom: 60px;
@@ -33,4 +37,69 @@
 
 .try-submitter {
   color:$turquoise;
+}
+
+
+@media screen and (max-width: 1023px){
+
+  .sub-salad-section {
+
+    .content {
+      padding-right:20px;
+      padding-left:20px;
+    }
+
+    h2 {
+      line-height: 1.2;
+      margin-left:10%;
+      margin-right:10%;
+    }
+
+    .salad-info {
+      padding:25px;
+    }
+  }
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .sub-salad-section {
+
+    .content {
+      padding:0px;
+    }
+
+    h2 {
+      line-height: 1.2;
+      margin:90px 25%;
+    }
+
+    .salad-info {
+      border-bottom:2px solid $black;
+      padding:0;
+      padding-bottom:25px;
+      margin:25px 35px;
+      margin-top:0px;
+    }
+
+    .single-salad {
+
+      &:nth-of-type(1) {
+
+        padding-top:25px;
+      }
+
+      &:nth-last-of-type(1) {
+
+        .salad-info {
+          border-bottom:0px solid $black;
+          padding-bottom:0px;
+        }
+      }
+    }
+  }
+
 }

@@ -2,17 +2,17 @@
 <main class="home-page">
 	<?php while (have_posts()) : the_post(); ?>
 		<section class="hero-section">
-			<div class="salad-parts">
+			<div class="salad-parts saladParts">
 				<?php get_template_part('partials/_salad-parts');?>
 			</div>
 			<div class="content">
-				<h1>Top 5 Salads</h1>
+				<h1 class="mainTitle">Top 5 Salads</h1>
 			</div>
 		</section>
 		<?php get_template_part('partials/_top-five-section');?>
 		<section class="got-a-salad-prompt submitTrigger">
 		  <div class="content">
-				Is there a salad that should make this list?&nbsp;&nbsp;<span>Submit A Salad</span>
+				Is there a salad that should make this list?&nbsp;&nbsp;<span class="subNavToggle submitToggle menuToggle">Submit A Salad</span>
 			</div>
 		</section>
 		<?php get_template_part('partials/_no-slouch-section');?>
