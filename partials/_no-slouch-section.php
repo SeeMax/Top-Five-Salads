@@ -16,9 +16,12 @@
         <div class="salad-info">
           <h4><?php the_title();?></h4>
           <p>
-            By <a href="restaurant_link" target="_blank" class="">
-              <?php the_field('restaurant');?>
-            </a>
+
+              By
+              <span class="mapOpen salad-map-link">
+                <?php the_field('restaurant');?>
+              </span>
+
           </p>
           <div class="salad-description">
             <?php the_field('salad_description');?>

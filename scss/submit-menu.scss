@@ -1,24 +1,16 @@
 @import "colors";
 
 .submit-menu {
-  position: fixed;
-  top:0;
-  left:-55%;
-  width:55%;
-  height:100%;
-  min-height:100%;
   background-color: $red;
   overflow:scroll;
 
   .content {
     height:auto;
-    min-height:calc(100% - 143px);
-    overflow:scroll;
-    padding-left:80px;
-    padding-right:80px;
-    justify-content: flex-start;
-    align-content: flex-start;
     padding-bottom:30px;
+  }
+
+  h3 {
+    display: none;
   }
 
   .wpcf7 {
@@ -36,6 +28,7 @@
     padding:15px;
     border:0;
     margin-bottom:24px;
+    border-radius: 0px;
 
     &::placeholder {
       color:$black;
@@ -83,5 +76,42 @@
 
   .wpcf7-mail-sent-ok {
     border:2px solid $green;
+  }
+}
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .submit-menu {
+
+    .content {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    h3 {
+      display: block;
+      margin-bottom:40px;
+    }
+
+    input, textarea {
+      font-size:12px;
+      padding:12px;
+      padding-top:16px;
+    }
+
+    input[type="submit"] {
+      cursor:pointer;
+      background:none;
+      outline:none;
+      border:3px solid $black;
+      display: block;
+      padding:12px;
+      margin:0 auto;
+
+      &:hover {
+        padding-bottom:0px;
+      }
+    }
   }
 }

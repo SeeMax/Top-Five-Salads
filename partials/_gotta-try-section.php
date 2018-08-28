@@ -25,14 +25,18 @@
         <?php endif; ?>
         <div class="salad-info">
           <h4><?php the_title();?></h4>
-          <p class="by-and-submitted-area">
+          <div class="by-and-submitted-area">
             <span>
-              By <a href=<?php the_field("try_restaurant_link");?> target="_blank" class=""><?php the_field('try_restaurant');?></a>
+              By
+              <span class="mapOpen salad-map-link">
+                <?php the_field('try_restaurant');?>
+              </span>
             </span>
+
             <span class="try-submitter">
               <?php the_field('try_submitter');?>
             </span>
-          </p>
+          </div>
           <div class="salad-description">
             <?php the_field('try_salad_description');?>
           </div>

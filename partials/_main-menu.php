@@ -1,6 +1,11 @@
 <div class="main-menu mainMenu">
   <div class="background-block"></div>
   <div class="content">
+    <div class="mobile-mainmenu-toggle mobileMainToggle">
+      <span class="hamTop"></span>
+      <span class="hamMid"></span>
+      <span class="hamBot"></span>
+    </div>
     <h3 class="subNavToggle about-toggle aboutToggle">About</h3>
     <h3 class="subNavToggle submit-toggle submitToggle">Submit a Salad</h3>
     <h3 class="subNavAnchor top5-toggle top5Toggle"><a href="#topfive">Top 5 Salads</a></h3>

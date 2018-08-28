@@ -29,9 +29,9 @@
               <h3><?php the_title();?></h3>
               <div class="salad-credit">
                 By
-                <a href="restaurant_link" target="_blank" class="">
+                <div class="mapOpen salad-map-link">
                   <?php the_field('restaurant');?>
-                </a>
+                </div>
               </div>
               <div class="salad-words c-width-48">
                 <div class="salad-description"><?php the_field('salad_description');?></div>

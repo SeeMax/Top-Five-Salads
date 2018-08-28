@@ -9,6 +9,7 @@
 				<h1 class="mainTitle">Top 5 Salads</h1>
 			</div>
 		</section>
+		<?php get_template_part('partials/_salad-map');?>
 		<?php get_template_part('partials/_top-five-section');?>
 		<section class="got-a-salad-prompt submitTrigger">
 		  <div class="content">

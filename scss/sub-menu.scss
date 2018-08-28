@@ -25,7 +25,7 @@
 
   .submenu-toggle {
   	position: absolute;
-  	top:100px;
+  	top:127px;
   	right:80px;
   	cursor: pointer;
   	display: block;
@@ -43,5 +43,39 @@
   		width:100%;
   		background-color: black;
   	}
+  }
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1023px){
+
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+  .sub-menu {
+    width:100%;
+    left:-100%;
+    padding-top:0px;
+    font-size:12px;
+
+    .content {
+      padding-left: 38px;
+      padding-right: 38px;
+      text-align: center;
+    }
+
+    h3 {
+      font-size:24px;
+    }
+
+    .submenu-toggle {
+      top:18px;
+      right:auto;
+      left:25px;
+    }
   }
 }

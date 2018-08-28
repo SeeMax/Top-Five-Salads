@@ -4,12 +4,12 @@ $(document).ready(function() {
 
   var target = $(this).attr("href"); //Get the target
 
-  // perform animated scrolling by getting top-position of target-element and set it as scroll target
-  $('html, body').stop().animate({ scrollTop: $(target).offset().top -80 }, 500);
-
   // IF IT"S MOBILE CLOSE THE NAV
-  if (screen.width <= 1025){
-    closeNav();
+  if (screen.width <= 1023){
+    $('html, body').stop().animate({ scrollTop: $(target).offset().top -60 }, 500);
+  } else {
+    // perform animated scrolling by getting top-position of target-element and set it as scroll target
+    $('html, body').stop().animate({ scrollTop: $(target).offset().top -80 }, 500);
   }
 
   return false;

@@ -4,6 +4,7 @@
 	margin-top:0px;
 	margin-bottom:60px;
 
+
 	.content {
 		padding-top:120px;
 		padding-bottom: 0;
@@ -15,12 +16,13 @@
 		padding:14px 20px;
 		background:$lightGreen;
 		line-height: 1.25;
+		-webkit-backface-visibility: hidden;
 	}
 }
 
 .salad-parts {
 	position: absolute;
-	top:0;
+	bottom:45px;
 	left:0;
 	right:0;
 	max-width: 1080px;
@@ -107,9 +109,11 @@
 
 
 // 1024px And Below
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
 
-
+	.salad-parts {
+		bottom:55px;
+	}
 }
 
 
@@ -118,9 +122,10 @@
 
 	.hero-section {
 		margin-top:0px;
+		margin-bottom:74px;
 
 		.content {
-			padding-top:120px;
+			padding-top:0px;
 			padding-bottom: 0;
 		}
 
@@ -130,6 +135,16 @@
 			padding:14px 20px;
 			background:$lightGreen;
 			line-height: 1.25;
+		}
+
+		.salad-parts {
+			position: absolute;
+	    left: -15%;
+	    right: 0;
+	    max-width: 130%;
+	    margin: 0 auto;
+	    width: 130%;
+	    bottom: -114px;
 		}
 	}
 }
