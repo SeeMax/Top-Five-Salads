@@ -46,6 +46,7 @@
 	padding:35px 35px 25px 35px;
 
 	.salad-map-link {
+		position: relative;
 		cursor:pointer;
 		display: inline-block;
 		text-transform: none;
@@ -157,5 +158,9 @@
 
 	.salad-info {
 		padding-top:25px;
+	}
+
+	.rank-bars {
+		margin-top:25px;
 	}
 }

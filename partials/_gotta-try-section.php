@@ -23,12 +23,13 @@
           >
           </div>
         <?php endif; ?>
-        <div class="salad-info">
+        <div class="salad-info c-width-100">
           <h4><?php the_title();?></h4>
           <div class="by-and-submitted-area">
             <span>
               By
-              <span class="mapOpen salad-map-link">
+              <span class="salad-map-link">
+                <a class="c-block-fill" href="<?php the_field('try_restaurant_link');?>" target="_blank"></a>
                 <?php the_field('try_restaurant');?>
               </span>
             </span>

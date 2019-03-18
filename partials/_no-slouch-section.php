@@ -13,12 +13,13 @@
     <?php if ($the_query->have_posts()) : ?>
     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
       <div class="single-salad">
-        <div class="salad-info">
+        <div class="salad-info c-width-100">
           <h4><?php the_title();?></h4>
           <p>
 
               By
-              <span class="mapOpen salad-map-link">
+              <span class="salad-map-link">
+                <a class="c-block-fill" href="<?php the_field('try_restaurant_link');?>" target="_blank"></a>
                 <?php the_field('restaurant');?>
               </span>
 

@@ -1,6 +1,7 @@
 @import "colors";
 
 .hero-section {
+	z-index:81;
 	margin-top:0px;
 	margin-bottom:60px;
 
@@ -29,7 +30,7 @@
 	margin:0 auto;
 
 	svg {
-		overflow: visible;
+		overflow: visible !important;
 	}
 }
 
@@ -121,6 +122,7 @@
 @media screen and (max-width: 767px){
 
 	.hero-section {
+		z-index:1;
 		margin-top:0px;
 		margin-bottom:74px;
 

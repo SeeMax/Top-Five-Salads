@@ -15,6 +15,7 @@ $(window).on('load', function() {
 					scrolledTitle = $(".scrolledTitle"),
 					saladParts = $(".saladParts"),
 					mainTitle = $(".mainTitle"),
+					heroSection = $(".hero-section"),
 		      // Universal Variables
 		      uniTime1 = 1,
 		      uniTime2 = 0.3,
@@ -28,7 +29,8 @@ $(window).on('load', function() {
 
 				titleSwapTL.to(scrolledTitle, 0.3, {opacity:1},"swapTitle")
 									 .to(mainTitle, 0.3, {opacity:0, transformOrigin:"50% 0%", rotationX:-90},"swapTitle")
-									 .to(saladParts, 0.3, {opacity:0, y:-80},"swapTitle");
+									 .to(saladParts, 0.3, {opacity:0, y:-80},"swapTitle")
+									 .to(heroSection, 0.000001, {zIndex:-1});
 			} else {
 
 				titleSwapTL.to(scrolledTitle, 0.3, {opacity:1},"swapTitle")

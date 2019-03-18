@@ -14,14 +14,22 @@
 
 	<?php wp_head(); ?>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136428669-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-136428669-1');
+	</script>
 
 </head>
 <body <?php body_class(); ?> >
 <div class="wrapper">
-<!-- ADD A PRE-LOADEDER
 <div id="preloader">
-	<img class="fug_Preloader" src="<?php // echo get_template_directory_uri();?>/img/fug_preloader.svg" >
-</div> -->
+	<img src="<?php echo get_template_directory_uri();?>/img/loader.svg" >
+</div>
 	<header class="header headerPin" role="banner">
 		<div class="content">
 			<nav class="menu-toggle menuToggle" role="navigation">

@@ -1,4 +1,4 @@
-<div class="salad-map-container mapContainer">
+<!-- <div class="salad-map-container mapContainer">
   <div class="salad-map-toggle mapClose">
     <span class="hamTop"></span>
     <span class="hamMid"></span>
@@ -9,4 +9,4 @@
     width="100%"
     height="100%">
   </iframe>
-</div>
+</div> -->

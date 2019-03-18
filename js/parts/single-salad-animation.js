@@ -41,7 +41,7 @@ $(".single-salad").each( function(){
   }
 
   masterTL.add(numberPunch())
-          .add(barsOut(),"-=0.35");
+          .add(barsOut(),"-=0.3");
 
 
 
