@@ -30,7 +30,7 @@
               <div class="salad-credit">
                 By
                 <div class="salad-map-link">
-                  <a class="c-block-fill" href="<?php the_field('try_restaurant_link');?>" target="_blank"></a>
+                  <a class="c-block-fill" href="<?php the_field('restaurant_link');?>" target="_blank"></a>
                   <?php the_field('restaurant');?>
                 </div>
               </div>
