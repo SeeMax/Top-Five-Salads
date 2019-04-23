@@ -4,8 +4,8 @@
     <?php $saladArgs = array(
     'post_type' => 'gottatrys',
     'posts_per_page' => -1,
-    'order' => 'ASC',
-    'orderby' => 'menu_order',
+    // 'order' => 'ASC',
+    // 'orderby' => 'menu_order',
   ); $the_query = new WP_Query($saladArgs);?>
   <?php if ($the_query->have_posts()) : ?>
     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
