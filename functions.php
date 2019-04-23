@@ -375,6 +375,16 @@ if (function_exists('acf_add_options_page')) {
         'icon_url' => 'dashicons-media-spreadsheet',
         'position' => 6
     ));
+
+    acf_add_options_page(array(
+        'page_title'    => 'About Tab',
+        'menu_title'    => 'About Tab',
+        'menu_slug'    => 'about_tab',
+        'capability'    => 'edit_posts',
+        'redirect'    => false,
+        'icon_url' => 'dashicons-excerpt-view',
+        'position' => 6
+    ));
 }
     /*  ACF GLOBAL	*/
 

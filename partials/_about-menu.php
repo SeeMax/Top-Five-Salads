@@ -5,9 +5,9 @@
     <span class="hamBot"></span>
   </div>
   <div class="content">
-    <h3>Hi Salad Friends</h3>
+    <h3><?php the_field('about_tab_headline','option');?></h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      <?php the_field('about_tab_body_copy','option');?>
     </p>
   </div>
 </div>
