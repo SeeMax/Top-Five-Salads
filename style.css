@@ -888,6 +888,43 @@ hr {
 .greens-bar svg {
   fill: #eba892; }
 
+.rip-class {
+  position: relative; }
+  .rip-class h4, .rip-class .salad-description, .rip-class p, .rip-class .salad-map-link {
+    color: #7fcac2; }
+  .rip-class .rip-textline {
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .rip-class .rip-textline div {
+      opacity: 0.5;
+      border: 5px solid #231f20;
+      text-align: center;
+      width: auto;
+      height: auto;
+      padding: 4px 4px 4px 16px; }
+    .rip-class .rip-textline h2 {
+      font-size: 80px;
+      letter-spacing: 10px;
+      line-height: 1;
+      margin: 0; }
+
+@media screen and (max-width: 1024px) {
+  .rip-class .rip-textline h2 {
+    font-size: 70px; } }
+
 @media screen and (max-width: 767px) {
   .single-salad {
     margin-bottom: 0px;
@@ -897,7 +934,9 @@ hr {
   .salad-info {
     padding-top: 25px; }
   .rank-bars {
-    margin-top: 25px; } }
+    margin-top: 25px; }
+  .rip-class .rip-textline {
+    top: -24px; } }
 
 .sub-menu {
   font-size: 24px;

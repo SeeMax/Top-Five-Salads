@@ -137,10 +137,56 @@
 	}
 }
 
+.rip-class {
+	position: relative;
+
+	h4, .salad-description, p, .salad-map-link {
+		color:$blueGreen;
+	}
+
+	.rip-textline {
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width:100%;
+		height:100%;
+		position: absolute;
+		top:0;
+		right:0;
+
+
+		div {
+			opacity:0.5;
+			border:5px solid $black;
+			text-align: center;
+			width:auto;
+			height:auto;
+			padding:4px 4px 4px 16px;
+		}
+
+		h2 {
+			font-size:80px;
+			letter-spacing: 10px;
+			line-height: 1;
+			margin: 0;
+		}
+	}
+}
+
 
 // 1024px And Below
 @media screen and (max-width: 1024px){
 
+	.rip-class {
+
+		.rip-textline {
+
+			h2 {
+				font-size: 70px;
+			}
+		}
+	}
 }
 
 
@@ -162,5 +208,12 @@
 
 	.rank-bars {
 		margin-top:25px;
+	}
+
+	.rip-class {
+
+		.rip-textline {
+			top:-24px;
+		}
 	}
 }

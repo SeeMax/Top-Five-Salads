@@ -12,7 +12,20 @@
     ); $the_query = new WP_Query($saladArgs);?>
     <?php if ($the_query->have_posts()) : ?>
     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-      <div class="single-salad">
+      <!-- Check if the Salad is dead -->
+      <?php $rips = get_field('rip');?>
+      <?php if( $rips ): ?>
+        <?php foreach( $rips as $rip ): ?>
+          <div class="single-salad <?php echo strtolower($rip);?>-class">
+            <div class="rip-textline">
+              <div>
+                <h2>RIP</h2>
+              </div>
+          </div>
+        <?php endforeach; ?>
+      <?php else:?>
+        <div class="single-salad">
+      <?php endif; ?>
         <div class="salad-info c-width-100">
           <h4><?php the_title();?></h4>
           <p>
